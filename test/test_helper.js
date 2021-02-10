@@ -6,6 +6,7 @@ before((done) => {
 	const options = {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
+		useFindAndModify: false,
 	};
 
 	mongoose.connect('mongodb://localhost/users_test', options);

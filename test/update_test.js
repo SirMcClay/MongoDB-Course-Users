@@ -28,9 +28,18 @@ describe('Updating records', () => {
 		assertName(joe.updateOne({ name: 'Alex' }), done); // update is deprecated using updateOne
 	});
 
-	it('a model class can update', (done) => {});
+	it('a model class can update', (done) => {
+		assertName(
+			User.updateMany({ name: 'Joe' }, { name: 'Alex' }), // update was deprecated using updateMany
+			done
+		);
+	});
 
-	it('a model class can update one record', (done) => {});
+	it('a model class can update one record', (done) => {
+		assertName(User.findOneAndUpdate({ name: 'Joe' }, { name: 'Alex' }), done);
+	});
 
-	it('a model class can find a record with an Id and update', (done) => {});
+	it('a model class can find a record with an Id and update', (done) => {
+		assertName(User.findByIdAndUpdate(joe._id, { name: 'Alex' }), done);
+	});
 });
