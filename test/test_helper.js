@@ -9,7 +9,7 @@ const options = {
 
 mongoose.connect('mongodb://localhost/users_test', options);
 mongoose.connection
-	.once('open', () => console.log('Good to go!'))
+	.once('open', () => {})
 	.on('error', (error) => {
 		console.warn('Warning', error);
 	});
