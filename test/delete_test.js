@@ -28,7 +28,14 @@ describe('Deleting a user', () => {
 			});
 	});
 
-	it('class User method findAndRemove', () => {});
+	it('class User method findAndRemove', (done) => {
+		User.findOneAndDelete({ name: 'Joe' }) // .findOneAndRemove() was deprecated instead uses findOneAndDelete()
+			.then(() => User.findOne({ name: 'Joe' }))
+			.then((user) => {
+				assert(user === null);
+				done();
+			});
+	});
 
 	it('class User method findByIdAndRemove', () => {});
 });
