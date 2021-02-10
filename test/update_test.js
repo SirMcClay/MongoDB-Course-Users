@@ -27,4 +27,10 @@ describe('Updating records', () => {
 	it('a model instance can update', (done) => {
 		assertName(joe.updateOne({ name: 'Alex' }), done); // update is deprecated using updateOne
 	});
+
+	it('a model class can update', (done) => {});
+
+	it('a model class can update one record', (done) => {});
+
+	it('a model class can find a record with an Id and update', (done) => {});
 });
