@@ -25,9 +25,11 @@ describe('Associations', () => {
 
 	// if want to run a only one test just use it.only statement on the test
 	it.only('saves a relation between a user and a blogpost', (done) => {
-		User.findOne({ name: 'Joe' }).then((user) => {
-			console.log(user);
-			done();
-		});
+		User.findOne({ name: 'Joe' })
+			.populate('blogPosts')
+			.then((user) => {
+				console.log(user);
+				done();
+			});
 	});
 });
