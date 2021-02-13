@@ -14,7 +14,7 @@ describe('Associations', () => {
 		});
 		comment = new Comment({ content: 'Congrats on great post' });
 
-		joe.blogPost.push(blogPost);
+		joe.blogPosts.push(blogPost);
 		blogPost.comments.push(comment);
 		comment.user = joe;
 
@@ -23,5 +23,11 @@ describe('Associations', () => {
 		);
 	});
 
-	it('', () => {});
+	// if want to run a only one test just use it.only statement on the test
+	it.only('saves a relation between a user and a blogpost', (done) => {
+		User.findOne({ name: 'Joe' }).then((user) => {
+			console.log(user);
+			done();
+		});
+	});
 });
