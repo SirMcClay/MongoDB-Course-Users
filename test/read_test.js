@@ -29,5 +29,8 @@ describe('Reading users out of the database', () => {
 		});
 	});
 
-	it('can skip and limit the result set', () => {});
+	it('can skip and limit the result set', (done) => {
+		// -Alex- [Joe Maria] Zach
+		User.find({}).skip(1).limit(2);
+	});
 });
