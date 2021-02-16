@@ -20,7 +20,7 @@ describe('Deleting a user', () => {
 	});
 
 	it('class User method remove', (done) => {
-		User.deleteMany({ name: 'Joe' }) // .remove() was deprecated instead uses deleteMany()
+		User.deleteMany({ name: 'Joe' }) // .remove() was deprecated instead uses deleteMany() or deleteOne()
 			.then(() => User.findOne({ name: 'Joe' }))
 			.then((user) => {
 				assert(user === null);
